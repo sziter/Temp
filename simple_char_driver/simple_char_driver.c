@@ -92,6 +92,7 @@ struct scull_qset *scull_follow(struct scull_dev *dev, int n)
 
 
 struct scull_dev dev;
+//static loff_t write_pos = 0;
 
 static int scull_open(struct inode *inode, struct file *filp)
 {
@@ -101,15 +102,15 @@ static int scull_open(struct inode *inode, struct file *filp)
 	filp->private_data = open_dev;
 
 	if ( (filp->f_flags & O_ACCMODE) == O_WRONLY) {
-		pr_notice("inside open\n");
+		scull_trim(&dev);
 	}
-	pr_notice("opening\n");
+	//pr_notice("opening\n");
 	return 0;
 }
 
 static int scull_release(struct inode *inode, struct file *filp)
 {
-	pr_notice("releasing\n");
+	pr_notice("size = %lu", dev.size);
 	return 0;
 }
 
@@ -124,10 +125,6 @@ static ssize_t scull_read(struct file *filp, char __user *buf, size_t count,
 	int item, s_pos, q_pos, rest;
 	ssize_t ret = 0;
 
-	pr_notice("reading\n");
-
-	/*if (down_interruptible(&read_dev->sem))
-		return -ERESTARTSYS;*/
 	if (*f_pos >= read_dev->size)
 		goto out;
 	if (*f_pos + count > read_dev->size)
@@ -159,7 +156,6 @@ static ssize_t scull_read(struct file *filp, char __user *buf, size_t count,
 	ret = count;
 
 	out:
-	//up(&read_dev->sem);
 	return ret;
 }
 
@@ -172,11 +168,8 @@ static ssize_t scull_write(struct file *filp, char __user *buf, size_t count,
 	int itemsize = quantum * qset;
 	int item, s_pos, q_pos, rest;
 	ssize_t retval = -ENOMEM; /* value used in "goto out" statements */
-
-	pr_notice("writing\n");
-
-	/*if (down_interruptible(&write_dev->sem))
-		return -ERESTARTSYS;*/
+	//if (*f_pos == 0)
+	//	*f_pos += write_pos;
 
 	/* find listitem, qset index and offset in the quantum */
 	item = (long)*f_pos / itemsize;
@@ -207,6 +200,7 @@ static ssize_t scull_write(struct file *filp, char __user *buf, size_t count,
 		goto out;
 	}
 	*f_pos += count;
+	//write_pos += count;
 	retval = count;
 
         /* update the size */
@@ -214,9 +208,7 @@ static ssize_t scull_write(struct file *filp, char __user *buf, size_t count,
 		write_dev->size = *f_pos;
 
 	out:
-	//up(&write_dev->sem);
 	return retval;
-	return 0;
 }
 
 static struct file_operations fops = {
@@ -248,7 +240,6 @@ static int __init hello_init(void)
 {
 	dev.quantum = SCULL_QUANTUM;
 	dev.qset = SCULL_QSET;
-	//init_MUTEX(&dev.sem);
 
 	reg_result = register_device();	
 
@@ -264,6 +255,7 @@ static void __exit hello_cleanup(void)
 	if (result == 0)
 		unregister_chrdev_region(dev_nrs, count);
 	cdev_del(&dev.cdev);
+	scull_trim(&dev);
 
 	pr_notice("_____________________________________________________\n");
 }
