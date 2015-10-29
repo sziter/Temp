@@ -6,6 +6,7 @@
 #include <linux/cdev.h>
 #include <linux/slab.h>
 #include <linux/errno.h>
+#include <linux/semaphore.h>
 
 #include <asm/uaccess.h>
 
@@ -31,7 +32,7 @@ struct scull_dev {
 	int quantum;
 	unsigned long size;
 	unsigned int access_key;
-	struct semaphore sem;
+	//struct semaphore sem;
 };
 
 struct scull_qset {
@@ -125,8 +126,8 @@ static ssize_t scull_read(struct file *filp, char __user *buf, size_t count,
 
 	pr_notice("reading\n");
 
-	if (down_interruptible(&read_dev->sem))
-		return -ERESTARTSYS;
+	/*if (down_interruptible(&read_dev->sem))
+		return -ERESTARTSYS;*/
 	if (*f_pos >= read_dev->size)
 		goto out;
 	if (*f_pos + count > read_dev->size)
@@ -158,7 +159,7 @@ static ssize_t scull_read(struct file *filp, char __user *buf, size_t count,
 	ret = count;
 
 	out:
-	up(&read_dev->sem);
+	//up(&read_dev->sem);
 	return ret;
 }
 
@@ -174,8 +175,8 @@ static ssize_t scull_write(struct file *filp, char __user *buf, size_t count,
 
 	pr_notice("writing\n");
 
-	if (down_interruptible(&write_dev->sem))
-		return -ERESTARTSYS;
+	/*if (down_interruptible(&write_dev->sem))
+		return -ERESTARTSYS;*/
 
 	/* find listitem, qset index and offset in the quantum */
 	item = (long)*f_pos / itemsize;
@@ -213,7 +214,7 @@ static ssize_t scull_write(struct file *filp, char __user *buf, size_t count,
 		write_dev->size = *f_pos;
 
 	out:
-	up(&write_dev->sem);
+	//up(&write_dev->sem);
 	return retval;
 	return 0;
 }
@@ -245,7 +246,11 @@ static int register_device(void)
 
 static int __init hello_init(void)
 {
-	reg_result = register_device();
+	dev.quantum = SCULL_QUANTUM;
+	dev.qset = SCULL_QSET;
+	//init_MUTEX(&dev.sem);
+
+	reg_result = register_device();	
 
 	pr_notice("result = %d\n", result);
 	pr_notice("major = %d\n", major);
