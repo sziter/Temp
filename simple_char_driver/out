@@ -1,0 +1,166 @@
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.0  0.1  33912  4396 ?        Ss   19:40   0:01 /sbin/init
+root         2  0.0  0.0      0     0 ?        S    19:40   0:00 [kthreadd]
+root         3  0.0  0.0      0     0 ?        S    19:40   0:05 [ksoftirqd/0]
+root         5  0.0  0.0      0     0 ?        S<   19:40   0:00 [kworker/0:0H]
+root         7  0.2  0.0      0     0 ?        S    19:40   0:19 [rcu_sched]
+root         8  0.1  0.0      0     0 ?        S    19:40   0:10 [rcuos/0]
+root         9  0.0  0.0      0     0 ?        S    19:40   0:06 [rcuos/1]
+root        10  0.0  0.0      0     0 ?        S    19:40   0:04 [rcuos/2]
+root        11  0.0  0.0      0     0 ?        S    19:40   0:04 [rcuos/3]
+root        12  0.0  0.0      0     0 ?        S    19:40   0:00 [rcu_bh]
+root        13  0.0  0.0      0     0 ?        S    19:40   0:00 [rcuob/0]
+root        14  0.0  0.0      0     0 ?        S    19:40   0:00 [rcuob/1]
+root        15  0.0  0.0      0     0 ?        S    19:40   0:00 [rcuob/2]
+root        16  0.0  0.0      0     0 ?        S    19:40   0:00 [rcuob/3]
+root        17  0.0  0.0      0     0 ?        S    19:40   0:00 [migration/0]
+root        18  0.0  0.0      0     0 ?        S    19:40   0:00 [watchdog/0]
+root        19  0.0  0.0      0     0 ?        S    19:40   0:00 [watchdog/1]
+root        20  0.0  0.0      0     0 ?        S    19:40   0:00 [migration/1]
+root        21  0.0  0.0      0     0 ?        S    19:40   0:07 [ksoftirqd/1]
+root        22  0.0  0.0      0     0 ?        S    19:40   0:00 [kworker/1:0]
+root        23  0.0  0.0      0     0 ?        S<   19:40   0:00 [kworker/1:0H]
+root        24  0.0  0.0      0     0 ?        S    19:40   0:00 [watchdog/2]
+root        25  0.0  0.0      0     0 ?        S    19:40   0:00 [migration/2]
+root        26  0.0  0.0      0     0 ?        S    19:40   0:08 [ksoftirqd/2]
+root        28  0.0  0.0      0     0 ?        S<   19:40   0:00 [kworker/2:0H]
+root        29  0.0  0.0      0     0 ?        S    19:40   0:00 [watchdog/3]
+root        30  0.0  0.0      0     0 ?        S    19:40   0:00 [migration/3]
+root        31  0.0  0.0      0     0 ?        S    19:40   0:04 [ksoftirqd/3]
+root        32  0.0  0.0      0     0 ?        S    19:40   0:00 [kworker/3:0]
+root        33  0.0  0.0      0     0 ?        S<   19:40   0:00 [kworker/3:0H]
+root        34  0.0  0.0      0     0 ?        S<   19:40   0:00 [khelper]
+root        35  0.0  0.0      0     0 ?        S    19:40   0:00 [kdevtmpfs]
+root        36  0.0  0.0      0     0 ?        S<   19:40   0:00 [netns]
+root        37  0.0  0.0      0     0 ?        S    19:40   0:00 [khungtaskd]
+root        38  0.0  0.0      0     0 ?        S<   19:40   0:00 [writeback]
+root        39  0.0  0.0      0     0 ?        SN   19:40   0:00 [ksmd]
+root        40  0.0  0.0      0     0 ?        SN   19:40   0:00 [khugepaged]
+root        41  0.0  0.0      0     0 ?        S<   19:40   0:00 [crypto]
+root        42  0.0  0.0      0     0 ?        S<   19:40   0:00 [kintegrityd]
+root        43  0.0  0.0      0     0 ?        S<   19:40   0:00 [bioset]
+root        44  0.0  0.0      0     0 ?        S<   19:40   0:00 [kblockd]
+root        45  0.0  0.0      0     0 ?        S<   19:40   0:00 [ata_sff]
+root        46  0.0  0.0      0     0 ?        S    19:40   0:00 [khubd]
+root        47  0.0  0.0      0     0 ?        S<   19:40   0:00 [md]
+root        48  0.0  0.0      0     0 ?        S<   19:40   0:00 [devfreq_wq]
+root        50  0.0  0.0      0     0 ?        S    19:40   0:01 [kworker/0:1]
+root        51  0.0  0.0      0     0 ?        S    19:40   0:00 [kswapd0]
+root        52  0.0  0.0      0     0 ?        S    19:40   0:00 [fsnotify_mark]
+root        53  0.0  0.0      0     0 ?        S    19:40   0:00 [ecryptfs-kthrea]
+root        65  0.0  0.0      0     0 ?        S<   19:40   0:00 [kthrotld]
+root        67  0.0  0.0      0     0 ?        S<   19:40   0:00 [acpi_thermal_pm]
+root        68  0.0  0.0      0     0 ?        S    19:40   0:00 [scsi_eh_0]
+root        69  0.0  0.0      0     0 ?        S<   19:40   0:00 [scsi_tmf_0]
+root        70  0.0  0.0      0     0 ?        S    19:40   0:00 [scsi_eh_1]
+root        71  0.0  0.0      0     0 ?        S<   19:40   0:00 [scsi_tmf_1]
+root        74  0.0  0.0      0     0 ?        S<   19:40   0:00 [ipv6_addrconf]
+root        75  0.0  0.0      0     0 ?        S    19:40   0:00 [kworker/1:1]
+root        95  0.0  0.0      0     0 ?        S<   19:40   0:00 [deferwq]
+root        96  0.0  0.0      0     0 ?        S<   19:40   0:00 [charger_manager]
+root       144  0.0  0.0      0     0 ?        S<   19:40   0:00 [kpsmoused]
+root       171  0.0  0.0      0     0 ?        S<   19:40   0:00 [kworker/1:1H]
+root       174  0.0  0.0      0     0 ?        S    19:40   0:00 [kworker/0:2]
+root       241  0.0  0.0      0     0 ?        S    19:40   0:00 [jbd2/sda1-8]
+root       242  0.0  0.0      0     0 ?        S<   19:40   0:00 [ext4-rsv-conver]
+root       369  0.0  0.0  19612  2052 ?        S    19:40   0:00 upstart-udev-bridge --daemon
+root       372  0.0  0.0      0     0 ?        S<   19:40   0:00 [kworker/0:1H]
+root       377  0.0  0.0  51864  3832 ?        Ss   19:40   0:00 /lib/systemd/systemd-udevd --daemon
+root       429  0.0  0.0      0     0 ?        S<   19:40   0:00 [iprt]
+root       457  0.0  0.0      0     0 ?        S<   19:40   0:00 [kworker/2:1H]
+root       459  0.0  0.0      0     0 ?        S<   19:40   0:00 [kmpathd]
+root       460  0.0  0.0      0     0 ?        S<   19:40   0:00 [kmpath_handlerd]
+root       485  0.0  0.0      0     0 ?        S    19:40   0:00 [jbd2/sda3-8]
+root       487  0.0  0.0      0     0 ?        S<   19:40   0:00 [ext4-rsv-conver]
+root       495  0.0  0.0      0     0 ?        S    19:40   0:00 [jbd2/sda4-8]
+root       499  0.0  0.0      0     0 ?        S<   19:40   0:00 [ext4-rsv-conver]
+root       599  0.0  0.0      0     0 ?        S<   19:40   0:00 [kworker/3:1H]
+root       671  0.0  0.3 272708 14444 ?        Ss   19:40   0:00 smbd -F
+message+   686  0.0  0.0  39960  3492 ?        Ss   19:40   0:02 dbus-daemon --system --fork
+root       707  0.0  0.2 330240  9428 ?        Ssl  19:40   0:00 /usr/sbin/ModemManager
+root       718  0.0  0.0  15528  2044 ?        S    19:40   0:00 upstart-socket-bridge --daemon
+root       721  0.0  0.0  15412  1808 ?        S    19:40   0:00 upstart-file-bridge --daemon
+root       729  0.0  0.0  19300  2648 ?        Ss   19:40   0:00 /usr/sbin/bluetoothd
+root       741  0.0  0.0      0     0 ?        S<   19:40   0:00 [krfcommd]
+syslog     760  0.0  0.0 255848  3068 ?        Ssl  19:40   0:00 rsyslogd
+root       774  0.0  0.0  43456  3160 ?        Ss   19:40   0:00 /lib/systemd/systemd-logind
+avahi      785  0.0  0.0  32356  2956 ?        S    19:40   0:00 avahi-daemon: running [jonas-VirtualBox.local]
+avahi      790  0.0  0.0  32228   252 ?        S    19:40   0:00 avahi-daemon: chroot helper
+root       838  0.0  0.0  17292  2140 tty4     Ss+  19:40   0:00 /sbin/getty -8 38400 tty4
+root       839  0.0  0.2 353856 11224 ?        Ssl  19:40   0:00 NetworkManager
+root       842  0.0  0.0  17292  2204 tty5     Ss+  19:40   0:00 /sbin/getty -8 38400 tty5
+root       849  0.0  0.1 272708  8008 ?        S    19:40   0:00 smbd -F
+root       850  0.0  0.0  17292  2144 tty2     Ss+  19:40   0:00 /sbin/getty -8 38400 tty2
+root       852  0.0  0.0  17292  2188 tty3     Ss+  19:40   0:00 /sbin/getty -8 38400 tty3
+root       855  0.0  0.0  17292  2104 tty6     Ss+  19:40   0:00 /sbin/getty -8 38400 tty6
+root       864  0.0  0.0      0     0 ?        S    19:40   0:00 [kauditd]
+root       870  0.0  0.2 2102628 8460 ?        Sl   19:40   0:01 /usr/sbin/console-kit-daemon --no-daemon
+root       894  0.0  0.0  23660  2360 ?        Ss   19:40   0:00 cron
+root       952  0.0  0.1  75360  6092 ?        Ss   19:40   0:00 /usr/sbin/cups-browsed
+root       980  0.0  0.0   4372  1700 ?        Ss   19:40   0:01 acpid -c /etc/acpi/events -s /var/run/acpid.socket
+root      1095  0.0  0.2 134244  8132 ?        Ss   19:40   0:00 mdm
+root      1124  0.0  0.2 295920 10644 ?        Sl   19:40   0:00 /usr/lib/policykit-1/polkitd --no-debug
+kernoops  1146  0.0  0.0  37148  2552 ?        Ss   19:40   0:00 /usr/sbin/kerneloops
+root      1178  0.0  0.2 194776  8584 ?        S    19:40   0:00 mdm
+root      1205  9.0  3.5 626368 144836 tty8    Ssl+ 19:40  12:44 /usr/bin/X :0 -audit 0 -auth /var/lib/mdm/:0.Xauth -nolisten tcp vt8
+nobody    1405  0.0  0.0  32500  3280 ?        S    19:40   0:00 /usr/sbin/dnsmasq --no-resolv --keep-in-foreground --no-hosts --bind-interfaces --pid-file=/run/sendsigs.omit.d/network-manager.dnsmasq.pid --listen-address=127.0.1.1 --conf-file=/var/run/NetworkManager/dnsmasq.conf --cache-size=0 --proxy-dnssec --enable-dbus=org.freedesktop.NetworkManager.dnsmasq --conf-dir=/etc/NetworkManager/dnsmasq.d
+root      1409  0.0  0.0 225048  2732 ?        Sl   19:40   0:03 /usr/sbin/VBoxService
+root      1499  0.0  0.0  17292  2124 tty1     Ss+  19:40   0:00 /sbin/getty -8 38400 tty1
+root      1605  0.0  0.1 191456  5056 ?        Ss   19:40   0:00 nmbd -D
+mdm       2011  0.0  0.0  24444  1904 ?        S    19:40   0:00 dbus-launch --autolaunch=f43a831569f4631d7b39d7f956267df7 --binary-syntax --close-stderr
+mdm       2012  0.0  0.0  39120   312 ?        Ss   19:40   0:00 //bin/dbus-daemon --fork --print-pid 5 --print-address 7 --session
+jonas     2039  0.0  0.2 393700 10616 ?        Sl   19:40   0:00 /usr/bin/gnome-keyring-daemon --daemonize --login
+jonas     2049  0.0  0.5 408556 20272 ?        Ssl  19:40   0:00 cinnamon-session --session cinnamon
+jonas     2185  0.0  0.1 110952  4228 ?        Sl   19:40   0:00 /usr/bin/VBoxClient --clipboard
+jonas     2194  0.0  0.0 113152  3904 ?        Sl   19:40   0:00 /usr/bin/VBoxClient --display
+jonas     2199  0.0  0.0  43344  3296 ?        Sl   19:40   0:00 /usr/bin/VBoxClient --seamless
+jonas     2204  0.0  0.0  44124  3660 ?        Sl   19:40   0:00 /usr/bin/VBoxClient --draganddrop
+jonas     2205  0.0  0.0  10624   316 ?        Ss   19:40   0:00 /usr/bin/ssh-agent /usr/bin/dbus-launch --exit-with-session /usr/bin/im-launch cinnamon-session-cinnamon
+jonas     2208  0.0  0.0  24444  1836 ?        S    19:40   0:00 /usr/bin/dbus-launch --exit-with-session /usr/bin/im-launch cinnamon-session-cinnamon
+jonas     2209  0.0  0.0  39784  2948 ?        Ss   19:40   0:00 //bin/dbus-daemon --fork --print-pid 6 --print-address 9 --session
+jonas     2283  0.0  0.2 367620  9656 ?        Sl   19:40   0:00 /usr/lib/at-spi2-core/at-spi-bus-launcher
+jonas     2287  0.0  0.0  39252  3372 ?        S    19:40   0:00 /bin/dbus-daemon --config-file=/etc/at-spi2/accessibility.conf --nofork --print-address 3
+jonas     2290  0.0  0.1 124916  4904 ?        Sl   19:40   0:00 /usr/lib/at-spi2-core/at-spi2-registryd --use-gnome-session
+jonas     2300  0.0  1.0 1133116 44300 ?       Sl   19:40   0:03 /usr/lib/cinnamon-settings-daemon/cinnamon-settings-daemon
+jonas     2315  0.0  0.2 371076  9872 ?        S<l  19:40   0:01 /usr/bin/pulseaudio --start --log-target=syslog
+rtkit     2317  0.0  0.0 168920  2520 ?        SNl  19:40   0:00 /usr/lib/rtkit/rtkit-daemon
+root      2325  0.0  0.1 239372  7332 ?        Sl   19:40   0:00 /usr/lib/upower/upowerd
+jonas     2379  0.0  0.1 193920  5656 ?        Sl   19:40   0:00 /usr/lib/gvfs/gvfsd
+jonas     2395  0.0  0.2 360432  9176 ?        Sl   19:40   0:00 /usr/lib/gvfs/gvfsd-fuse /run/user/1000/gvfs -f -o big_writes
+jonas     2447  0.0  0.2 308724  9376 ?        Sl   19:40   0:00 /usr/lib/gvfs/gvfs-udisks2-volume-monitor
+root      2450  0.0  0.2 386232  8932 ?        Sl   19:40   0:00 /usr/lib/udisks2/udisksd --no-debug
+jonas     2459  0.0  0.1 197556  5644 ?        Sl   19:40   0:00 /usr/lib/gvfs/gvfs-mtp-volume-monitor
+jonas     2463  0.0  0.1 283240  6420 ?        Sl   19:40   0:00 /usr/lib/gvfs/gvfs-afc-volume-monitor
+jonas     2468  0.0  0.1 209720  6108 ?        Sl   19:40   0:00 /usr/lib/gvfs/gvfs-gphoto2-volume-monitor
+jonas     2471  0.0  0.6 252284 27136 ?        Sl   19:40   0:00 /usr/bin/python2 /usr/bin/cinnamon-launcher
+colord    2473  0.0  0.2 311024  9524 ?        Sl   19:40   0:00 /usr/lib/colord/colord
+jonas     2475  0.0  0.2 388432  9188 ?        Sl   19:40   0:00 /usr/lib/cinnamon-settings-daemon/csd-printer
+jonas     2483  4.4  3.9 1764576 158436 ?      Sl   19:40   6:17 cinnamon --replace
+jonas     2499  0.4  2.4 1293132 99152 ?       Sl   19:40   0:37 nemo -n
+jonas     2500  0.0  0.7 702196 31092 ?        Sl   19:40   0:00 nm-applet
+jonas     2501  0.0  0.6 328296 27816 ?        Sl   19:40   0:00 /usr/bin/python2 /usr/bin/cinnamon-killer-daemon
+jonas     2503  0.0  0.4 239184 16444 ?        Sl   19:40   0:00 /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
+jonas     2534  0.0  0.1  54648  5632 ?        S    19:40   0:00 /usr/lib/x86_64-linux-gnu/gconf/gconfd-2
+jonas     2536  0.0  0.1 121792  5772 ?        Sl   19:40   0:00 /usr/lib/gvfs/gvfsd-metadata
+jonas     2546  0.0  0.2 371452  9956 ?        Sl   19:40   0:00 /usr/lib/gvfs/gvfsd-trash --spawner :1.8 /org/gtk/gvfs/exec_spaw/0
+jonas     2562  0.0  0.1 178180  4608 ?        Sl   19:40   0:00 /usr/lib/dconf/dconf-service
+root      2566  0.0  0.1 302232  7780 ?        Sl   19:40   0:00 /usr/lib/accountsservice/accounts-daemon
+jonas     2597  0.0  0.1 224112  7872 ?        Sl   19:40   0:00 /usr/lib/gvfs/gvfsd-computer --spawner :1.8 /org/gtk/gvfs/exec_spaw/1
+root      2637  0.0  0.1  76860  6576 ?        Ss   19:41   0:00 /usr/sbin/cupsd -f
+jonas     2649  0.0  0.1  25712  7136 ?        S    19:41   0:00 /usr/bin/python /usr/bin/mintupdate-launcher
+jonas     2650  0.0  0.7 526888 31876 ?        Sl   19:41   0:04 cinnamon-screensaver
+jonas     2653  0.0  0.0   4448   684 ?        S    19:41   0:00 sh -c /usr/lib/linuxmint/mintUpdate/mintUpdate.py
+jonas     2654  0.0  1.0 573340 42076 ?        Sl   19:41   0:00 /usr/bin/python2.7 /usr/lib/linuxmint/mintUpdate/mintUpdate.py
+jonas     2686  0.0  0.5 217996 23204 ?        Sl   19:41   0:00 /usr/bin/python /usr/share/system-config-printer/applet.py
+jonas     2715  0.2  1.2 670392 50632 ?        Sl   19:42   0:24 gedit /home/jonas/Documents/simple_char_driver/Makefile
+jonas     6860 14.8  7.2 1094000 294048 ?      Sl   19:57  18:15 /usr/lib/firefox/firefox
+jonas     7090  0.0  0.7 622304 31784 ?        Sl   20:10   0:05 gnome-terminal
+jonas     7094  0.0  0.0  14828  2024 ?        S    20:10   0:00 gnome-pty-helper
+jonas     7095  0.0  0.1  24124  5684 pts/1    Ss   20:10   0:00 bash
+root      9602  0.0  0.0      0     0 ?        S    20:16   0:00 [kworker/u8:0]
+root      9742  0.0  0.0      0     0 ?        S    20:24   0:00 [kworker/2:2]
+root     10710  0.0  0.0      0     0 ?        S    21:27   0:00 [kworker/u8:1]
+root     10747  0.0  0.0      0     0 ?        S    21:37   0:00 [kworker/2:0]
+root     10748  0.0  0.0      0     0 ?        S    21:37   0:00 [kworker/3:1]
+root     10772  0.0  0.1  10236  5212 ?        S    21:37   0:00 /sbin/dhclient -d -sf /usr/lib/NetworkManager/nm-dhcp-client.action -pf /run/sendsigs.omit.d/network-manager.dhclient-eth0.pid -lf /var/lib/NetworkManager/dhclient-f30582af-b6d6-48f7-82d1-b9cf697af977-eth0.lease -cf /var/lib/NetworkManager/dhclient-eth0.conf eth0
+jonas    12828  0.0  0.0  19920  2920 pts/1    R+   22:00   0:00 ps aux
