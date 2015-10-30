@@ -10,8 +10,8 @@
 
 #include <asm/uaccess.h>
 
-#define SCULL_QUANTUM 4000
-#define SCULL_QSET 1000
+#define SCULL_QUANTUM 100000
+#define SCULL_QSET 10
 
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("Jonas");
@@ -24,6 +24,8 @@ static unsigned int major;
 static char driver_name[] = "scd_test";
 static int result = -2;
 static int reg_result = -2;
+int scull_qset;
+int scull_quantum;
 
 struct scull_dev {
 	struct cdev cdev;
@@ -32,7 +34,7 @@ struct scull_dev {
 	int quantum;
 	unsigned long size;
 	unsigned int access_key;
-	//struct semaphore sem;
+	struct mutex mutex;
 };
 
 struct scull_qset {
@@ -57,8 +59,8 @@ int scull_trim(struct scull_dev *dev)
 		kfree(dptr);
 	}
 	dev->size = 0;
-	dev->quantum = SCULL_QUANTUM;
-	dev->qset = SCULL_QSET;
+	dev->quantum = scull_quantum;
+	dev->qset = scull_qset;
 	dev->data = NULL;
 
 	return 0;
@@ -102,7 +104,10 @@ static int scull_open(struct inode *inode, struct file *filp)
 	filp->private_data = open_dev;
 
 	if ( (filp->f_flags & O_ACCMODE) == O_WRONLY) {
+		if (mutex_lock_interruptible(&open_dev->mutex))
+			return -ERESTARTSYS;
 		scull_trim(&dev);
+		mutex_unlock(&open_dev->mutex);
 	}
 	//pr_notice("opening\n");
 	return 0;
@@ -178,6 +183,9 @@ static ssize_t scull_write(struct file *filp, char __user *buf, size_t count,
 
 	/* follow the list up to the right position */
 	dptr = scull_follow(write_dev, item);
+
+	if (mutex_lock_interruptible(&write_dev->mutex))
+		return -ERESTARTSYS;
 	if (dptr == NULL)
 		goto out;
 	if (!dptr->data) {
@@ -208,6 +216,7 @@ static ssize_t scull_write(struct file *filp, char __user *buf, size_t count,
 		write_dev->size = *f_pos;
 
 	out:
+	mutex_unlock(&write_dev->mutex);
 	return retval;
 }
 
@@ -238,8 +247,11 @@ static int register_device(void)
 
 static int __init hello_init(void)
 {
-	dev.quantum = SCULL_QUANTUM;
-	dev.qset = SCULL_QSET;
+	scull_quantum = SCULL_QUANTUM;
+	scull_qset = SCULL_QSET;
+	dev.quantum = scull_quantum;
+	dev.qset = scull_qset;
+	mutex_init(&dev.mutex);
 
 	reg_result = register_device();	
 
