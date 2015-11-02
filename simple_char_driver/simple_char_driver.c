@@ -7,11 +7,17 @@
 #include <linux/slab.h>
 #include <linux/errno.h>
 #include <linux/semaphore.h>
+#include <linux/wait.h>
 
+#include <asm/ioctl.h>
 #include <asm/uaccess.h>
 
 #define SCULL_QUANTUM 100000
 #define SCULL_QSET 10
+
+#define SCULL_IOC_MAGIC '%'
+#define SCULL_IOCRESET _IO(SCULL_IOC_MAGIC, 0)
+#define SCULL_IOCTEST _IO(SCULL_IOC_MAGIC, 1)
 
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("Jonas");
@@ -24,9 +30,8 @@ static unsigned int major;
 static char driver_name[] = "scd_test";
 static int result = -2;
 static int reg_result = -2;
-int scull_qset;
-int scull_quantum;
-
+static int scull_qset;
+static int scull_quantum;
 struct scull_dev {
 	struct cdev cdev;
 	struct scull_qset *data;
@@ -220,12 +225,28 @@ static ssize_t scull_write(struct file *filp, char __user *buf, size_t count,
 	return retval;
 }
 
+static long scull_ioctl(struct file *filp, unsigned int cmd, unsigned long arg)
+{
+	switch(cmd) {
+		case SCULL_IOCRESET:
+			scull_quantum = SCULL_QUANTUM;
+			scull_qset = SCULL_QSET;
+			break;
+
+		case SCULL_IOCTEST:
+			pr_notice("Hello from scull_ioctl!\n");
+			break;
+	}
+
+	return 0;
+}
+
 static struct file_operations fops = {
 	.owner = THIS_MODULE,
 	//.llseek = scull_llseek,
 	.read = scull_read,
 	.write = scull_write,
-	//.ioctl = scull_ioctl,
+	.unlocked_ioctl = scull_ioctl,
 	.open = scull_open,
 	.release = scull_release,
 };
